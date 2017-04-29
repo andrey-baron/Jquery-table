@@ -1,0 +1,23 @@
+{
+  "name": "tests",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Andrey Garin"
+  ],
+  "license": "BSD-2-Clause",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.0",
+    "numeral": "~1.5.3"
+  }
+}

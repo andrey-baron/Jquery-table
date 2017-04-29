@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+
+    <script src="js/vendor.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</head>
+<body>
+
+<!-- editModal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">Edit row</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon">Фамилия</span>
+                    <input type="text" class="form-control edit-input" id="edit-surname"  placeholder="Фамилия студента" aria-describedby="sizing-addon2">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">Имя</span>
+                    <input type="text" class="form-control edit-input" id="edit-name" placeholder="Имя студента" aria-describedby="sizing-addon2">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">Отчество</span>
+                    <input type="text" class="form-control edit-input" id="edit-patronymic"  placeholder="Отчество студента" aria-describedby="sizing-addon2">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">Email</span>
+                    <input type="email" class="form-control edit-input" id="edit-email"  placeholder="Email студента" aria-describedby="sizing-addon2">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">Дата рождения</span>
+                    <input type="text" class="form-control edit-input" id="edit-dateBirth"  placeholder="Дата рождения студента" aria-describedby="sizing-addon2">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">Курс</span>
+                    <input  class="form-control edit-input" id="edit-course"  placeholder="Курс студента" aria-describedby="sizing-addon2">
+                    <div id="slider"></div>
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">Пол</span>
+                    <select name="editGender" id="edit-gender" class="form-control edit-input">
+                        <option value="Мужской">Мужской</option>
+                        <option value="Женский">Женский</option>
+                    </select>
+                </div>
+                <div class="input-group" id="errorsEdit"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary edit-row-btn">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End   editModal -->
+<div class="modal fade" id="delete-confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">are you sure you want to perform this action?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary del-row-btn">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-9">
+                <div class="input-group">
+                    <input type="text" class="form-control search_input" placeholder="Search for...">
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <button class="btn btn-default pull-right add-row-modal">Add</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Table</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th id="thSurname" data-sort="true" data-typefield="surname">Фамилия<div class="triangle triangle-up" id="triangleSurName"></div></th>
+                        <th id="thName" data-sort="true" data-typefield="name">Имя<div class="triangle triangle-up" id="triangleName"></div></th>
+                        <th id="thPatronymic" data-sort="true" data-typefield="patronymic">Отчество<div class="triangle triangle-up" id="trianglePatronymic"></div></th>
+                        <th id="thEmail" data-sort="true" data-typefield="email">Email<div class="triangle triangle-up" ></div></th>
+                        <th id="thBirth" data-sort="true" data-typefield="dateBirth">Дата Рождения<div class="triangle triangle-up"></div></th>
+                        <th id="thGender" data-sort="true" data-typefield="gender">Пол<div class="triangle triangle-up"></div></th>
+                        <th id="thCourse" data-sort="true" data-typefield="course">Курс<div class="triangle triangle-up"></div></th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody class="main-tbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<script>
+  //$( "#edit-dateBirth" ).datepicker();
+    $(function() {
+
+        $('#edit-dateBirth').datepicker();
+
+    });
+</script>
+</body>
+</html>
