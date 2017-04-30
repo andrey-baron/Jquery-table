@@ -81,19 +81,6 @@ $(function(){
      });
 
 
-   /* $(document).on('click','#triangleName',function(){
-        var triangle=document.getElementById('triangleName');
-
-        if(triangle.className=='triangle-up'){
-            storage.descendingNameSort();
-            triangle.className='triangle-down';
-        }else {
-            triangle.className = 'triangle-up';
-            storage.ascendingNameSort();
-        }
-        storage.print();
-
-    });*/
     $(document).on('click','.table tr>th',function(){
         var triangle=$(this).find('.triangle');
         var typeField=$(this).data("typefield");

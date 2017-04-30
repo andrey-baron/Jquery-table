@@ -59,7 +59,9 @@ var TransferModalToData = function () {
 var OpenModal= function (state) {
     var modal=$('#editModal');
     modal.data("state",state);
-
+    if(state=="add"){
+        modal.find("input").val("");
+    }
     modal.modal('show');
 };
 
